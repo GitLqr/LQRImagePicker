@@ -16,18 +16,9 @@
 
 不得不说，原项目是一个非常不错的项目，有很多地方值得我们学习，其中图片的加载方案让我受益匪浅，通过定义一个接口，由第三方开发者自己在自己项目中实现，避免了在库中强制使用指定图片加载工具的问题，使得本项目的扩展性增强。当然也有其他值得学习的地方，在 [ImagePicker](https://github.com/jeasonlzy/ImagePicker)中有详细的配置方式，如有更多需求请前往原项目查看学习。这里我只记录下我自己项目中的使用配置：
 
-###1、将本项目添加到自己项目中，名为library，在build.gradle中引用本项目：
+###1、在自己项目中添加本项目依赖：
 
-	dependencies {
-	    ...
-
-	    // 图片加载工具以universal-image-loader为例
-	    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-	    // 仿微信的图片选择
-	    compile project(path: ':library')
-
-	    ...
-	}
+	compile 'com.lqr.imagepicker:library:1.0.0'
 
 ###2、实现ImageLoader接口(注意不是com.nostra13.universalimageloader.core.ImageLoader)，实现图片加载策略：
 
