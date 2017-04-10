@@ -1,7 +1,7 @@
 # LQRImagePicker
 完全仿微信的图片选择，并且提供了多种图片加载接口，选择图片后可以旋转，可以裁剪成矩形或圆形，可以配置各种其他的参数
 
-##一、简述：
+## 一、简述：
 
 本项目是基于[ImagePicker](https://github.com/jeasonlzy/ImagePicker)完善及界面修改。
 主要工作：
@@ -12,15 +12,15 @@
 >
 >3. 编码方面，原项目中获取本地文件uri路径时，使用Uri.fromFile()，这种方式不好，控制台会一直报错（such file or directory no found），故使用Uri.parse()进行代替。
 
-##二、使用：
+## 二、使用：
 
 不得不说，原项目是一个非常不错的项目，有很多地方值得我们学习，其中图片的加载方案让我受益匪浅，通过定义一个接口，由第三方开发者自己在自己项目中实现，避免了在库中强制使用指定图片加载工具的问题，使得本项目的扩展性增强。当然也有其他值得学习的地方，在 [ImagePicker](https://github.com/jeasonlzy/ImagePicker)中有详细的配置方式，如有更多需求请前往原项目查看学习。这里我只记录下我自己项目中的使用配置：
 
-###1、在自己项目中添加本项目依赖：
+### 1、在自己项目中添加本项目依赖：
 
 	compile 'com.lqr.imagepicker:library:1.0.0'
 
-###2、实现ImageLoader接口(注意不是com.nostra13.universalimageloader.core.ImageLoader)，实现图片加载策略：
+### 2、实现ImageLoader接口(注意不是com.nostra13.universalimageloader.core.ImageLoader)，实现图片加载策略：
 
 	/**
 	 * @创建者 CSDN_LQR
@@ -39,7 +39,7 @@
 	    }
 	}
 
-###3、在自定义Application中初始化(别忘了在AndroidManifest.xml中使用该自定义Application)：
+### 3、在自定义Application中初始化(别忘了在AndroidManifest.xml中使用该自定义Application)：
 	
 	/**
 	 * @创建者 CSDN_LQR
@@ -79,7 +79,7 @@
 	}
 
 
-###4、打开图片选择界面代码：
+### 4、打开图片选择界面代码：
 
 	public static final int IMAGE_PICKER = 100;
 
@@ -87,7 +87,7 @@
     startActivityForResult(intent, IMAGE_PICKER);
 
 
-###5、获取所选图片信息：
+### 5、获取所选图片信息：
 
 	@Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -106,7 +106,7 @@
         }
     }
 
-##三、效果：
+## 三、效果：
 ![image](screenshots/1.png)
 ![image](screenshots/2.png)
 ![image](screenshots/3.png)
